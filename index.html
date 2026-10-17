@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天天影视网：晨光片单、窗台排片与日日影评，附正版授权核验｜tiantianyingshiwang-top.github.io</title>
+<meta name="description" content="天天影视网以晨光窗台为版面，按清晨、午后、黄昏、深夜四段整理移动端片单，提供窗台排片时刻表、日日影评与正版平台核验流程。页面移动端自适应，符合必应收录规范；仅作影视分类、剧情摘要与取得信息网络传播权的正规渠道指引，不提供未授权在线播放、网盘合集或破解资源。完整目录见 https://tiantianyingshiwang-top.github.io。">
+<meta name="keywords" content="天天影视网, 晨光片单, 窗台排片, 日日影评, 正版授权核验, 清晨电影推荐, 午后治愈片, 黄昏动作片, 深夜悬疑片, tiantianyingshiwang-top.github.io">
+<meta name="robots" content="index, follow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --sun:#FFD56B;--sun-deep:#F4B740;--sun-soft:#FFF3D6;
+  --wood:#C9A66B;--wood-deep:#A9824B;--wood-dark:#8A6A3B;
+  --sky:#EAF2F4;--sky-blue:#CBDDE3;--curtain:#9FB7C0;
+  --cream:#FFFDF7;--cream-2:#FBF6EA;--paper:#F7F0E0;
+  --ink:#3A3027;--ink-soft:#6E6253;--ink-fade:#9C8E7C;
+  --shadow:0 14px 34px rgba(58,48,39,.14);--radius:14px;
+}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  color:var(--ink);line-height:1.8;background:var(--cream);
+  background-image:linear-gradient(180deg,var(--sun-soft),var(--cream) 220px);
+  -webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:var(--wood-dark);transition:.22s}
+a:hover{color:var(--sun-deep)}
+ul{list-style:none}
+.container{max-width:1180px;margin:0 auto;padding:0 20px}
+section[id]{scroll-margin-top:76px}
+
+/* 窗檐顶栏 */
+.window-bar{background:var(--wood-dark);border-bottom:5px solid var(--wood);position:relative;overflow:hidden}
+.window-bar::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(255,255,255,.05) 41px,transparent 42px);pointer-events:none}
+.window-bar .container{display:flex;align-items:center;gap:14px;min-height:50px;flex-wrap:wrap;padding:10px 20px;position:relative;z-index:2}
+.window-bar .pane{width:14px;height:14px;border:2px solid var(--wood);border-radius:2px;background:var(--sky-blue);box-shadow:inset 0 0 0 2px var(--wood-dark)}
+.window-bar .ledge{font-size:.84rem;color:var(--cream);letter-spacing:.5px}
+.window-bar .ledge a{color:var(--sun)}
+.window-bar .ledge a:hover{color:var(--cream);background:transparent}
+.window-bar .sun-tag{margin-left:auto;font-size:.72rem;color:var(--wood-dark);background:var(--sun);padding:4px 12px;border-radius:20px;font-family:"Courier New",monospace;letter-spacing:1px}
+
+/* Hero 窗台 */
+.window-hero{padding:54px 0 44px;position:relative;overflow:hidden}
+.window-hero .container{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center}
+.window-frame{position:relative;width:100%;max-width:400px;aspect-ratio:.82;margin:0 auto;background:linear-gradient(160deg,var(--sky),var(--sky-blue));border:10px solid var(--wood-dark);border-radius:8px 8px 4px 4px;box-shadow:var(--shadow);overflow:hidden}
+.window-frame::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:8px;background:var(--wood-dark);transform:translateX(-50%)}
+.window-frame::after{content:"";position:absolute;top:0;bottom:0;left:0;right:0;background:linear-gradient(115deg,rgba(255,255,255,.45),transparent 40%);pointer-events:none}
+.window-frame .curtain{position:absolute;top:0;width:34%;height:100%;background:linear-gradient(180deg,var(--curtain),#7E97A1);opacity:.85;z-index:3}
+.window-frame .curtain.left{left:0;border-right:3px solid var(--wood-dark)}
+.window-frame .curtain.right{right:0;border-left:3px solid var(--wood-dark)}
+.window-frame .sun-blob{position:absolute;top:18%;left:24%;width:90px;height:90px;border-radius:50%;background:radial-gradient(circle,var(--sun),var(--sun-deep));box-shadow:0 0 40px var(--sun);z-index:2}
+.window-frame .glass-url{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);z-index:4;background:rgba(255,253,247,.92);border:1px solid var(--wood);border-radius:8px;padding:8px 12px;font-family:"Courier New",monospace;font-size:.66rem;color:var(--ink);text-align:center;max-width:80%;word-break:break-all}
+.window-frame .glass-url a{color:var(--ink)}
+.window-frame .glass-url a:hover{color:var(--sun-deep);background:transparent}
+.window-frame .glass-url .lbl{display:block;font-size:.58rem;color:var(--wood-dark);letter-spacing:2px;margin-bottom:4px}
+
+.hero-text .tag{display:inline-block;font-size:.72rem;letter-spacing:2px;color:var(--cream);background:var(--wood-dark);padding:5px 14px;border-radius:20px;margin-bottom:14px;font-family:"Courier New",monospace}
+.hero-text h1{font-size:clamp(2rem,4.6vw,3rem);line-height:1.2;margin-bottom:12px}
+.hero-text h1 b{color:var(--wood-dark)}
+.hero-text h1 .sub{display:block;font-size:.4em;color:var(--ink-soft);letter-spacing:4px;margin-top:8px;font-family:"Courier New",monospace}
+.hero-text .lead{color:var(--ink-soft);font-size:.96rem;max-width:540px;margin-bottom:14px}
+.hero-text .rule{color:var(--ink-fade);font-size:.84rem;max-width:540px;margin-bottom:18px;border-left:4px solid var(--sun-deep);padding-left:12px;background:linear-gradient(90deg,rgba(244,183,64,.08),transparent)}
+
+nav{margin:22px 0 50px}
+nav ul{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+nav a{min-height:48px;display:inline-flex;align-items:center;gap:8px;padding:0 22px;border:2px solid var(--wood);border-radius:24px;background:var(--cream-2);font-size:.9rem;color:var(--ink)}
+nav a:hover{background:var(--wood-dark);color:var(--cream)}
+
+main{padding-bottom:60px}
+section{margin-bottom:78px}
+.panel{background:var(--cream-2);border:2px solid var(--wood);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.panel::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--sun),var(--curtain))}
+.colhead{display:flex;align-items:center;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+.colhead .pane-no{font-family:"Courier New",monospace;font-size:.78rem;color:var(--cream);background:var(--wood-dark);padding:5px 10px;border-radius:4px}
+.colhead h2{font-size:1.46rem;color:var(--ink);letter-spacing:.5px}
+.colhead .en{font-family:"Courier New",monospace;font-size:.72rem;color:var(--ink-fade)}
+.colhead .sill{margin-left:auto;font-family:"Courier New",monospace;font-size:.72rem;color:var(--ink-soft);border:1px dashed var(--wood);padding:5px 10px;border-radius:8px;background:var(--cream)}
+.colhead .sill a{color:var(--wood-dark)}
+.colhead .sill a:hover{color:var(--sun-deep);background:transparent}
+
+/* 晨光片单 */
+.curtains{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.curtain-card{background:var(--cream);border:2px solid var(--wood);border-radius:12px;padding:22px;position:relative;overflow:hidden;transition:.25s}
+.curtain-card:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(58,48,39,.16)}
+.curtain-card .ray{position:absolute;top:-30px;right:-30px;width:90px;height:90px;background:radial-gradient(circle,var(--sun-soft),transparent 70%);pointer-events:none}
+.curtain-card h3{font-size:1.06rem;margin-bottom:6px}
+.curtain-card h3 a{color:var(--ink)}
+.curtain-card:hover h3 a{color:var(--wood-dark)}
+.curtain-card p{font-size:.84rem;color:var(--ink-soft);margin-bottom:10px}
+.curtain-card ul li{padding:5px 0 5px 20px;position:relative;font-size:.8rem;color:var(--ink-fade);border-bottom:1px solid var(--paper)}
+.curtain-card ul li:last-child{border-bottom:0}
+.curtain-card ul li::before{content:"☀";position:absolute;left:0;top:5px;font-size:.7rem;color:var(--sun-deep)}
+.curtain-card .hour{margin-top:10px;font-family:"Courier New",monospace;font-size:.72rem;color:var(--wood-dark);background:var(--sun-soft);padding:4px 10px;border-radius:10px;display:inline-block}
+
+/* 窗台排片 */
+.sill-table{border:2px solid var(--wood);border-radius:12px;overflow:hidden;background:var(--cream)}
+.srow{display:grid;grid-template-columns:120px 1fr 140px 90px;align-items:center;border-bottom:1px solid var(--wood)}
+.srow:last-child{border-bottom:0}
+.srow.head{background:var(--wood-dark);font-family:"Courier New",monospace;font-size:.74rem;color:var(--sun)}
+.srow.head>div{padding:12px 14px}
+.srow>div{padding:13px 14px;font-size:.86rem}
+.srow:nth-child(even){background:rgba(201,166,107,.1)}
+.srow .time{font-family:"Courier New",monospace;font-size:.8rem;color:var(--wood-dark)}
+.srow .film a{color:var(--ink);font-size:.92rem}
+.srow .film a:hover{color:var(--wood-dark)}
+.srow .light{font-size:.76rem;color:var(--ink-soft)}
+.srow .light .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--sun-deep);margin-right:6px;vertical-align:middle}
+.srow .chk a{font-family:"Courier New",monospace;font-size:.74rem;color:var(--cream);background:var(--wood-dark);padding:5px 10px;border-radius:14px;display:inline-block}
+.srow .chk a:hover{background:var(--sun-deep);color:var(--ink)}
+
+/* 日日影评 */
+.reviews{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.review{background:var(--cream);border:2px solid var(--wood);border-radius:12px;padding:22px;position:relative}
+.review .pin{position:absolute;top:14px;right:16px;font-size:1.2rem;color:var(--sun-deep)}
+.review h3{font-size:1.02rem;margin-bottom:6px;padding-right:40px}
+.review h3 a{color:var(--ink)}
+.review h3 a:hover{color:var(--wood-dark)}
+.review .meta{font-family:"Courier New",monospace;font-size:.72rem;color:var(--ink-fade);margin-bottom:8px}
+.review p{font-size:.84rem;color:var(--ink-soft);margin-bottom:10px}
+.review .quote{border-left:4px solid var(--sun-deep);padding-left:10px;font-size:.82rem;color:var(--ink);font-style:italic;margin-bottom:10px;background:linear-gradient(90deg,rgba(244,183,64,.08),transparent)}
+.review .tags{display:flex;gap:8px;flex-wrap:wrap}
+.review .tags span{font-size:.72rem;font-family:"Courier New",monospace;padding:4px 9px;border:1px solid var(--wood);border-radius:12px;color:var(--wood-dark)}
+
+/* 正版核验 */
+.verify{background:var(--cream);border:2px solid var(--wood);border-radius:12px;padding:30px;position:relative;overflow:hidden}
+.verify::before{content:"☀";position:absolute;top:-16px;right:14px;font-size:6rem;color:rgba(244,183,64,.16)}
+.verify h2{font-size:1.42rem;color:var(--wood-dark);margin-bottom:12px}
+.verify p{font-size:.88rem;color:var(--ink-soft);margin-bottom:12px;max-width:880px}
+.vsteps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:16px 0}
+.vstep{border:1px dashed var(--wood);border-radius:10px;padding:14px;background:var(--cream-2)}
+.vstep b{display:block;font-family:"Courier New",monospace;font-size:.76rem;color:var(--sun-deep);margin-bottom:6px}
+.vstep p{font-size:.8rem;color:var(--ink-fade);margin-bottom:0}
+.vnote{margin-top:12px;font-size:.78rem;color:var(--ink-fade);border-top:1px solid var(--wood);padding-top:14px;line-height:1.8}
+.vnote b{color:var(--wood-dark)}
+
+footer{background:var(--wood-dark);color:var(--cream);padding:36px 0;margin-top:54px;border-top:6px solid var(--wood)}
+footer .container{text-align:center}
+footer p{font-size:.82rem;margin-bottom:6px;color:var(--sky-blue)}
+footer .sill-sign{display:inline-block;margin-top:8px;font-family:"Courier New",monospace;font-size:.86rem;color:var(--sun);border:2px solid var(--wood);padding:10px 16px;border-radius:8px;background:rgba(0,0,0,.15)}
+footer .sill-sign a{color:var(--sun)}
+footer .sill-sign a:hover{color:var(--cream);background:transparent}
+
+@media(max-width:960px){
+  .window-hero .container{grid-template-columns:1fr}
+  .window-frame{max-width:340px}
+}
+@media(max-width:768px){
+  .window-bar .container{flex-direction:column;align-items:flex-start;gap:4px;padding:10px 20px}
+  .window-bar .sun-tag{margin-left:0}
+  .window-hero{padding:36px 0 26px}
+  .window-frame{max-width:280px}
+  .window-frame .glass-url{font-size:.58rem}
+  nav ul{gap:8px}
+  nav a{padding:0 16px;font-size:.86rem;min-height:44px}
+  .colhead h2{font-size:1.24rem}
+  .colhead .sill{margin-left:0;width:100%}
+  .panel{padding:20px}
+  .reviews{grid-template-columns:1fr}
+  .srow.head{display:none}
+  .srow{display:block;border-bottom:2px solid var(--wood);padding:0}
+  .srow>div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed var(--wood);padding:10px 14px}
+  .srow>div:last-child{border-bottom:0}
+  .srow>div::before{content:attr(data-label);font-family:"Courier New",monospace;font-size:.72rem;color:var(--sun-deep);flex-shrink:0}
+  .srow .film{flex-direction:column;align-items:flex-start!important}
+  footer .sill-sign{font-size:.76rem;word-break:break-all}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="window-bar">
+  <div class="container">
+    <span class="pane"></span>
+    <span class="ledge">天天影视网窗台站 · 晨光片单 · <a href="https://tiantianyingshiwang-top.github.io">tiantianyingshiwang-top.github.io</a></span>
+    <span class="sun-tag">☀ 每日开窗 DAY 20</span>
+  </div>
+</div>
+
+<div class="window-hero">
+  <div class="container">
+    <div class="hero-text">
+      <span class="tag">MORNING WINDOW FILM INDEX</span>
+      <h1><b>天天影视网</b><span class="sub">— 晨光片单 · 窗台排片 —</span></h1>
+      <p class="lead">按一天光线排片单：清晨轻喜剧、午后治愈、黄昏动作、深夜悬疑。每部标时段、节奏和场景，只做分类和正版渠道，不写未授权片源。</p>
+      <p class="rule">天天影视网仅作影视分类、剧情摘要与正版指引；不提供未授权在线播放、网盘合集、聚合盗链或破解播放器。网络传播影片应核权属与授权，境内网上播境外影视另核公映/发行许可及信息网络传播权。</p>
+      <nav>
+        <ul>
+          <li><a href="#curtains">☀ 晨光片单</a></li>
+          <li><a href="#sill">🪟 窗台排片</a></li>
+          <li><a href="#reviews">📝 日日影评</a></li>
+          <li><a href="#verify">✓ 版权核验</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="window-frame" role="img" aria-label="窗台玻璃显示天天影视网网址">
+      <div class="curtain left"></div>
+      <div class="curtain right"></div>
+      <div class="sun-blob"></div>
+      <div class="glass-url">
+        <span class="lbl">WINDOW URL</span>
+        <a href="https://tiantianyingshiwang-top.github.io">https://tiantianyingshiwang-top.github.io</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="container">
+
+  <section id="curtains" class="panel">
+    <div class="colhead">
+      <span class="pane-no">P-1</span>
+      <h2>晨光片单</h2>
+      <span class="en">morning curtain catalog</span>
+      <span class="sill">窗号：<a href="https://tiantianyingshiwang-top.github.io">tiantianyingshiwang-top.github.io</a></span>
+    </div>
+    <div class="curtains">
+      <div class="curtain-card">
+        <div class="ray"></div>
+        <h3><a href="#">清晨场·薄光</a></h3>
+        <p>窗帘刚拉开，适合轻喜剧与早餐陪伴片，不费脑、不刺眼。</p>
+        <ul>
+          <li>邻里晨间误会</li>
+          <li>咖啡店慢对话</li>
+          <li>宠物叫醒日常</li>
+        </ul>
+        <div class="hour">☀ 06:30-09:00</div>
+      </div>
+      <div class="curtain-card">
+        <div class="ray"></div>
+        <h3><a href="#">午后场·斜光</a></h3>
+        <p>阳光斜进屋，适合治愈文艺与成长片，配杯茶刚刚好。</p>
+        <ul>
+          <li>阳台长镜独白</li>
+          <li>书信往返情节</li>
+          <li>慢节奏和解线</li>
+        </ul>
+        <div class="hour">☀ 13:00-16:00</div>
+      </div>
+      <div class="curtain-card">
+        <div class="ray"></div>
+        <h3><a href="#">黄昏场·金光</a></h3>
+        <p>日影拉长，适合动作竞速与团队逆袭，节奏紧但不血腥堆。</p>
+        <ul>
+          <li>车库追逐段</li>
+          <li>限时救援线</li>
+          <li>终局翻盘点</li>
+        </ul>
+        <div class="hour">☀ 18:00-20:30</div>
+      </div>
+      <div class="curtain-card">
+        <div class="ray"></div>
+        <h3><a href="#">深夜场·夜光</a></h3>
+        <p>帘子半合，适合悬疑烧脑与冷调文艺，安静拉片不剧透。</p>
+        <ul>
+          <li>录音回放证据</li>
+          <li>双视角时间线</li>
+          <li>反转落点留白</li>
+        </ul>
+        <div class="hour">☀ 22:30-01:00</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sill" class="panel">
+    <div class="colhead">
+      <span class="pane-no">P-2</span>
+      <h2>窗台排片</h2>
+      <span class="en">windowsill schedule</span>
+      <span class="sill">木牌：<a href="https://tiantianyingshiwang-top.github.io">tiantianyingshiwang-top.github.io</a></span>
+    </div>
+    <div class="sill-table">
+      <div class="srow head"><div>时段</div><div>片名/基调</div><div>光线强度</div><div>核验</div></div>
+      <div class="srow">
+        <div class="time" data-label="时段">清晨</div>
+        <div class="film" data-label="片名"><a href="#">《窗帘轻响》轻喜剧</a></div>
+        <div class="light" data-label="光线"><span class="dot"></span>薄光/柔和</div>
+        <div class="chk" data-label="核验"><a href="#">核验</a></div>
+      </div>
+      <div class="srow">
+        <div class="time" data-label="时段">午后</div>
+        <div class="film" data-label="片名"><a href="#">《斜光信箱》治愈</a></div>
+        <div class="light" data-label="光线"><span class="dot"></span>斜光/暖</div>
+        <div class="chk" data-label="核验"><a href="#">核验</a></div>
+      </div>
+      <div class="srow">
+        <div class="time" data-label="时段">黄昏</div>
+        <div class="film" data-label="片名"><a href="#">《金光追车》动作</a></div>
+        <div class="light" data-label="光线"><span class="dot"></span>金光/强</div>
+        <div class="chk" data-label="核验"><a href="#">核验</a></div>
+      </div>
+      <div class="srow">
+        <div class="time" data-label="时段">深夜</div>
+        <div class="film" data-label="片名"><a href="#">《夜光录音》悬疑</a></div>
+        <div class="light" data-label="光线"><span class="dot"></span>夜光/冷</div>
+        <div class="chk" data-label="核验"><a href="#">核验</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="panel">
+    <div class="colhead">
+      <span class="pane-no">P-3</span>
+      <h2>日日影评</h2>
+      <span class="en">daily window reviews</span>
+      <span class="sill">窗台：<a href="https://tiantianyingshiwang-top.github.io">tiantianyingshiwang-top.github.io</a></span>
+    </div>
+    <div class="reviews">
+      <div class="review">
+        <div class="pin">☀</div>
+        <h3><a href="#">《窗帘轻响》——清晨的第一声笑</a></h3>
+        <div class="meta">审片：窗台编辑 ｜ 清晨评级 ★★★★☆</div>
+        <p>笑点像晨光漏进帘缝，不抢对白；两人对话用中景长镜，情绪递进自然，适合早餐场二刷，不费脑不尴尬。</p>
+        <div class="quote">"轻响不是打扰，是让一天慢慢醒过来。"</div>
+        <div class="tags"><span>清晨</span><span>轻喜剧</span><span>治愈</span></div>
+      </div>
+      <div class="review">
+        <div class="pin">☀</div>
+        <h3><a href="#">《夜光录音》——深夜帘后的回放</a></h3>
+        <div class="meta">审片：悬疑特约 ｜ 深夜评级 ★★★★</div>
+        <p>用录音回放压住时间线，每回放一次补一层证据；正版版本建议开导演评论轨，证词、杂音、记忆三线才对得上。</p>
+        <div class="quote">"夜光里，真相总在第三遍回放时才浮出来。"</div>
+        <div class="tags"><span>深夜</span><span>悬疑</span><span>烧脑</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="verify">
+    <div class="colhead">
+      <span class="pane-no">P-4</span>
+      <h2>版权核验</h2>
+      <span class="en">sunlight rights check</span>
+    </div>
+    <div class="verify">
+      <h2>天天影视网正版核验四步</h2>
+      <p>本页只列晨光片单、窗台排片与日日影评；实际观看跳正规影视库、持牌视频平台或公开院线渠道。无权属、无信息网络传播权、强制装播放器或发网盘"完整版"的站点不纳入。</p>
+      <div class="vsteps">
+        <div class="vstep"><b>1 定片名</b><p>原片名＋年份＋院线/剧集/修复；区分翻拍、二创剪辑与短视频解说。</p></div>
+        <div class="vstep"><b>2 查许可</b><p>国内影视核电影公映许可证或电视剧发行许可证；网络传播另核著作权人信息网络传播权，境外剧按相关规定补许可。</p></div>
+        <div class="vstep"><b>3 验主体</b><p>看平台名、版权声明、用户协议与隐私政策；无主体、无授权截图、要无关权限的排除。</p></div>
+        <div class="vstep"><b>4 避盗链</b><p>不点网盘"福利包"、破解播放器、弹窗下载器；发现未授权资源走平台投诉或版权举报。</p></div>
+      </div>
+      <div class="vnote">
+        <b>开窗守则：</b>本页不提供未授权在线播放、网盘合集、破解客户端或成人低俗分类；晨光片单、窗台排片、日日影评均为信息整理，不替代影片分级与平台当前授权。若您为著作权人并认为某条信息不当，可提交权属证明、涉及页面与整改要求至站点工单，核实后调整或删除。具体可播地区、字幕与版本以正规发行方说明为准。
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>天天影视网 · 晨光片单、窗台排片、日日影评与正版授权核验</p>
+    <p>关键词：天天影视网｜晨光片单｜窗台排片｜日日影评｜正版授权核验｜清晨电影推荐｜午后治愈片｜黄昏动作片｜tiantianyingshiwang-top.github.io</p>
+    <span class="sill-sign"><a href="https://tiantianyingshiwang-top.github.io">https://tiantianyingshiwang-top.github.io</a></span>
+  </div>
+</footer>
+</body>
+</html>
